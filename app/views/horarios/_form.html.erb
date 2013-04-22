@@ -1,0 +1,27 @@
+<%= simple_form_for(@horario, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :dia %>
+    <%= f.input :hora %>
+    <%= f.input :aula %>
+
+    Instructor: 
+    <%= f.collection_select :instructor_id, Instructor.all, :id, :nombres, prompt: "Seleccione Instructor" %>
+    <br>
+    <br>
+    Curso: 
+    <%= f.collection_select :curso_id, Curso.all, :id, :nombre, prompt: "Seleccione Curso" %>
+    <br>
+    <br>
+    Materia: 
+    <%= f.input :materia_nombre, :url => autocomplete_materia_nombre_horarios_path, :as => :autocomplete, :id_element => '#id'  %>
+
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-info' %>
+    <%= link_to 'Cancelar', horarios_path, :class => 'btn btn-inverse' %>
+  </div>
+<% end %>

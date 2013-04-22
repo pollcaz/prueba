@@ -1,0 +1,40 @@
+                      curso_estudiantes GET    /cursos/:curso_id/estudiantes(.:format)            estudiantes#index
+                                        POST   /cursos/:curso_id/estudiantes(.:format)            estudiantes#create
+                   new_curso_estudiante GET    /cursos/:curso_id/estudiantes/new(.:format)        estudiantes#new
+                  edit_curso_estudiante GET    /cursos/:curso_id/estudiantes/:id/edit(.:format)   estudiantes#edit
+                       curso_estudiante GET    /cursos/:curso_id/estudiantes/:id(.:format)        estudiantes#show
+                                        PUT    /cursos/:curso_id/estudiantes/:id(.:format)        estudiantes#update
+                                        DELETE /cursos/:curso_id/estudiantes/:id(.:format)        estudiantes#destroy
+                                 cursos GET    /cursos(.:format)                                  cursos#index
+                                        POST   /cursos(.:format)                                  cursos#create
+                              new_curso GET    /cursos/new(.:format)                              cursos#new
+                             edit_curso GET    /cursos/:id/edit(.:format)                         cursos#edit
+                                  curso GET    /cursos/:id(.:format)                              cursos#show
+                                        PUT    /cursos/:id(.:format)                              cursos#update
+                                        DELETE /cursos/:id(.:format)                              cursos#destroy
+   autocomplete_materia_nombre_horarios GET    /horarios/autocomplete_materia_nombre(.:format)    horarios#autocomplete_materia_nombre
+     autocomplete_curso_nombre_horarios GET    /horarios/autocomplete_curso_nombre(.:format)      horarios#autocomplete_curso_nombre
+autocomplete_instructor_nombre_horarios GET    /horarios/autocomplete_instructor_nombre(.:format) horarios#autocomplete_instructor_nombre
+      autocomplete_aula_nombre_horarios GET    /horarios/autocomplete_aula_nombre(.:format)       horarios#autocomplete_aula_nombre
+                               horarios GET    /horarios(.:format)                                horarios#index
+                                        POST   /horarios(.:format)                                horarios#create
+                            new_horario GET    /horarios/new(.:format)                            horarios#new
+                           edit_horario GET    /horarios/:id/edit(.:format)                       horarios#edit
+                                horario GET    /horarios/:id(.:format)                            horarios#show
+                                        PUT    /horarios/:id(.:format)                            horarios#update
+                                        DELETE /horarios/:id(.:format)                            horarios#destroy
+                           instructores GET    /instructores(.:format)                            instructores#index
+                                        POST   /instructores(.:format)                            instructores#create
+                         new_instructor GET    /instructores/new(.:format)                        instructores#new
+                        edit_instructor GET    /instructores/:id/edit(.:format)                   instructores#edit
+                             instructor GET    /instructores/:id(.:format)                        instructores#show
+                                        PUT    /instructores/:id(.:format)                        instructores#update
+                                        DELETE /instructores/:id(.:format)                        instructores#destroy
+                               materias GET    /materias(.:format)                                materias#index
+                                        POST   /materias(.:format)                                materias#create
+                            new_materia GET    /materias/new(.:format)                            materias#new
+                           edit_materia GET    /materias/:id/edit(.:format)                       materias#edit
+                                materia GET    /materias/:id(.:format)                            materias#show
+                                        PUT    /materias/:id(.:format)                            materias#update
+                                        DELETE /materias/:id(.:format)                            materias#destroy
+                                   root        /                                                  horarios#index

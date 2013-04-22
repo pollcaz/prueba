@@ -1,0 +1,16 @@
+<%= simple_form_for([@curso, @estudiante], :html => { :multipart => true, :class => 'form-horizontal'}) do |f| %>
+
+  <%= f.error_notification %>
+
+  <%= f.input :nombres, :label => "Nombre",  :required => true %>
+  <%= f.input :cedula, :label => "Cedula",  :required => true %>
+  <%= f.input :email, :label => "eMail",  :required => true %>
+  <%= f.input :direccion, :label => "Direccion",  :required => true %>
+  <%= f.input :fch_nacimiento, as: :date, start_year: Date.today.year - 50, end_year: Date.today.year, accept_day: true, order: [:day, :month, :year] %>
+  <%= f.file_field :foto %>
+  
+  <div class="form-actions">
+    <%= f.button :submit, :action => :index, :class => 'btn btn-info' %>
+    <%= link_to 'Cancelar', curso_estudiantes_path, :class => 'btn btn-inverse' %>
+  </div>
+<% end %>

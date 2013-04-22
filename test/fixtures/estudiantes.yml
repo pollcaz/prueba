@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombres: MyString
+  cedula: MyString
+  email: MyString
+  direccion: MyString
+  fch_nacimiento: 2013-04-05
+  curso_id: 1
+
+two:
+  nombres: MyString
+  cedula: MyString
+  email: MyString
+  direccion: MyString
+  fch_nacimiento: 2013-04-05
+  curso_id: 1

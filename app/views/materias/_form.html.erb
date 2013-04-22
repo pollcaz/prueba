@@ -1,0 +1,12 @@
+<%= simple_form_for(@materia, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn btn-info' %>
+    <%= link_to 'Cancelar', materias_path, :class => 'btn btn-inverse' %>
+  </div>
+<% end %>

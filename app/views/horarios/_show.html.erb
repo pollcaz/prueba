@@ -1,0 +1,15 @@
+<%- model_class = Horario -%>
+<div class="page-header">
+  <h1 class='titulos'>Horario</h1>
+</div>
+
+<div class='horario'>
+  <p><span class='mostrar_tit'>ID: </span><%= @horario.id %></p>
+  <p><span class='mostrar_tit'>Dia: </span><%= @horario.dia %></p>
+  <p><span class='mostrar_tit'>Hora: </span><%= @horario.hora %></p>
+  <p><span class='mostrar_tit'>Aula: </span><%= @horario.aula %></p>
+  <p><span class='mostrar_tit'>Materia: </span><%= @horario.materia.nombre %></p>
+  <p><span class='mostrar_tit'>Instructor: </span><%= @horario.instructor.nombres %></p>
+  <p><span class='mostrar_tit'>Curso: </span><%= @horario.curso.nombre %></p>
+  <p><span class='mostrar_tit'>Fecha de Creacion: </span><%= @horario.created_at %></p>
+</div> 

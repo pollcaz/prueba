@@ -1,0 +1,20 @@
+<tr id=<%= "horario_#{horario.id}" %>>
+  <td><%= link_to horario.id, edit_horario_path(horario), :remote => true %></td>
+  <td><%= horario.dia %></td>
+  <td><%= horario.hora %></td>
+  <td><%= horario.aula %></td>
+  <td><%= horario.materia.nombre %></td>
+  <td><%= horario.instructor.nombres %></td>
+  <td><%= horario.curso.nombre %></td>
+  <td><%= horario.created_at %></td>
+  <td>
+    <%= link_to image_tag('mostrar.png', :width=>20, :title=>'Mostrar'), horario, :remote => true, :class => 'btn btn-success btn-mini' %>
+    <%= link_to image_tag('editar.png', :width=>20, :title=>'Editar'), edit_horario_path(horario), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to image_tag('eliminar.png', :width=>20, :title=>'Eliminar'), horario, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    <%= link_to image_tag('pdf.png', :width=>30, :title=>'Version PDF', :class => 'btn btn-inverse btn-mini'), horario_path(horario.id, :format => "pdf") %>
+  </td>
+</tr>
+

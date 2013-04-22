@@ -1,0 +1,18 @@
+<%- model_class = Estudiante -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='estudiante'>
+  <p><%= image_tag @estudiante.foto.url(:small) %></p>
+  <p><%= @estudiante.id %></p>
+  <p><%= @estudiante.nombres %></p>
+  <p><%= @estudiante.cedula %></p>
+  <p><%= @estudiante.email %></p>
+  <p><%= @estudiante.direccion %></p>
+  <p><%= @estudiante.fch_nacimiento %></p>
+  <p><%= @estudiante.created_at %></p>
+</div>
+<hr>
+<br>
+<%= link_to 'OK', curso_estudiantes_path, :class => 'btn btn-inverse' %>
