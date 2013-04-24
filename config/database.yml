@@ -18,7 +18,7 @@ development:
   database: prueba_development
   pool: 5
   username: postgres
-  password: oliva
+  password: postgres
   host: localhost
   port: 5432
 
@@ -46,7 +46,7 @@ test:
   database: prueba_test
   pool: 5
   username: postgres
-  password: oliva
+  password: postgres
   host: localhost
   port: 5432
 
