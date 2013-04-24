@@ -1,5 +1,3 @@
-
-
 class EstudiantesController < ApplicationController
   
  before_filter :find_curso_estudiantes
@@ -24,7 +22,7 @@ class EstudiantesController < ApplicationController
  
  def show
   if params[:format] == "pdf" then
-      pdf = EstudiantePdf.new(@estudiante, view_context)
+      pdf = EstudiantePdf.new(@curso, @estudiante, view_context)
       send_data pdf.render, filename: "estudiante_#{@estudiante.id}.pdf",
       type: "application/pdf"    
   end
@@ -60,8 +58,8 @@ class EstudiantesController < ApplicationController
  end
 
  def sort_column
-    Estudiante.column_names.include?(params[:sort]) ? params[:sort] : "id"
-  end
+   Estudiante.column_names.include?(params[:sort]) ? params[:sort] : "id"
+ end
 
   def sort_direction 
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"

@@ -18,7 +18,7 @@ development:
   database: prueba_development
   pool: 5
   username: postgres
-  password: oliva
+  password: asd123
   host: localhost
   port: 5432
 
@@ -46,7 +46,7 @@ test:
   database: prueba_test
   pool: 5
   username: postgres
-  password: oliva
+  password: asd123
   host: localhost
   port: 5432
 
@@ -56,6 +56,6 @@ production:
   database: prueba_production
   pool: 5
   username: postgres
-  password: oliva
+  password: asd123
   host: localhost
   port: 5432

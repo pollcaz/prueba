@@ -1,8 +1,9 @@
 class EstudiantePdf < Prawn::Document
 
-	def initialize(estudiante, view)
+	def initialize(horario, estudiante, view)
 	  super()
 	  @estudiante = estudiante
+	  @horario = horario
 	  @view = view
 	  logo
 	  titulo
@@ -36,9 +37,7 @@ class EstudiantePdf < Prawn::Document
 	    ["eMail", "#{@estudiante.email} "],
 	    ["Direccion", "#{@estudiante.direccion} "],
 	    ["Fecha de Nacimiento", "#{@estudiante.fch_nacimiento} "],
-	    ["Curso", "#{@estudiante.curso.nombre} "]
-
-
+	    ["Curso", "#{@estudiante.curso.nombre} "],
 	    ]), :width => 550 do
 	      columns(1).align = :center
 	      self.header = true

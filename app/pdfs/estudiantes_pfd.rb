@@ -22,27 +22,29 @@ class EstudiantesPdf < Prawn::Document
 	end
 
 	def titulo
-		text "Estudiantes del curso #{@estudiante.curso.nombre} ", :mode => :stroke, :size => 50, :style => :bold, :align => :center
+		#text "Estudiantes del curso #{@estudiante.curso.nombre} ", :mode => :stroke, :size => 50, :style => :bold, :align => :center
 	end
 
 
 	def vista
-		move_down(40)
-		foto = "#{@estudiante.foto.path(:small)}"
-		image foto, :position => :center
-	    table ([
-	    ["Nombre", "#{@estudiante.nombres} "],
-	    ["Cedula", "#{@estudiante.cedula} "],
-	    ["eMail", "#{@estudiante.email} "],
-	    ["Direccion", "#{@estudiante.direccion} "],
-	    ["Fecha de Nacimiento", "#{@estudiante.fch_nacimiento} "],
-	    ["Curso", "#{@estudiante.curso.nombre} "]
-	    ]), :width => 550 do
-	      columns(1).align = :center
-	      self.header = true
-	      align = :center
-	      self.column_widths = {0 => 200, 3 => 100}
-	      columns(2).font_style = :bold
-	    end
+		@estudiantes.each do |estudiante|
+			move_down(40)
+			foto = "#{estudiante.foto.path(:small)}"
+			image foto, :position => :center
+		    table ([
+		    ["Nombre", "#{estudiante.nombres} "],
+		    ["Cedula", "#{estudiante.cedula} "],
+		    ["eMail", "#{estudiante.email} "],
+		    ["Direccion", "#{estudiante.direccion} "],
+		    ["Fecha de Nacimiento", "#{estudiante.fch_nacimiento} "],
+		    ["Curso", "#{estudiante.curso.nombre} "]
+		    ]), :width => 550 do
+		      columns(1).align = :center
+		      self.header = true
+		      align = :center
+		      self.column_widths = {0 => 200, 3 => 100}
+		      columns(2).font_style = :bold
+		    end
+		end
 	end
 end
